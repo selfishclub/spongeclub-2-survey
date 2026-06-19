@@ -190,29 +190,21 @@ export default function SurveyPage() {
         <div className="text-6xl">🧽</div>
         <h1 className="mt-6 text-3xl font-extrabold">제출 완료!</h1>
         <p className="mt-5 text-[16px] leading-relaxed text-neutral-300">
-          신청서 제출이 완료되었습니다. 운영진이 답변을 검토한 뒤, 초대장과 사전
-          안내를 발송해 드릴 예정입니다. 제출해 주신 내용을 바탕으로 조 배정이
-          진행되니, 솔직한 답변에 감사드립니다.
+          추가 문의는{" "}
+          {LINKS.kakao ? (
+            <a
+              href={LINKS.kakao}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold underline underline-offset-4"
+            >
+              셀피쉬클럽 카카오채널
+            </a>
+          ) : (
+            <span className="font-semibold">셀피쉬클럽 카카오채널</span>
+          )}
+          로 해주세요.
         </p>
-        <div className="mt-8 w-full">
-          <Box variant="yellow">
-            🧽 셀피쉬클럽 · 스폰지클럽 2기
-            <br />
-            문의:{" "}
-            {LINKS.kakao ? (
-              <a
-                href={LINKS.kakao}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-bold underline underline-offset-4"
-              >
-                셀피쉬클럽 카카오채널
-              </a>
-            ) : (
-              <span className="font-bold">셀피쉬클럽 카카오채널</span>
-            )}
-          </Box>
-        </div>
       </main>
     );
   }
