@@ -663,7 +663,7 @@ export default function SurveyPage() {
                 <p className="font-bold">📹 카메라 사용 안내</p>
                 <p className="mt-1.5 leading-relaxed text-neutral-700">
                   라이브 세션과 조 모임에서는 가급적 카메라를 켜고 참여해 주세요.
-                  얼굴을 보고 이야기할 때 조의 리듬과 이기적공유의 밀도가 훨씬
+                  얼굴을 보고 이야기할 때 집중 학습력과 이기적공유의 밀도가 훨씬
                   좋아집니다.
                 </p>
               </Box>
