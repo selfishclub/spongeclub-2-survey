@@ -92,7 +92,6 @@ export const createEmptyAnswers = (): Answers => ({
 // 필수 항목 (이 키들이 비어 있으면 제출 차단). 동의 3종은 별도 검증.
 export const REQUIRED_KEYS: (keyof Answers)[] = [
   "본명",
-  "닉네임",
   "이메일",
   "연락처",
   "연령대",
@@ -193,7 +192,7 @@ export const SCHEDULE_TABLE: {
   {
     주차: "🛠 셋업 데이",
     날짜: "6/27 (토)",
-    시간: "20:00–22:00",
+    시간: "20:00–23:00",
     형식: "온라인 · 전원 참석",
     highlight: true,
   },
@@ -202,8 +201,8 @@ export const SCHEDULE_TABLE: {
   {
     주차: "🏕 W3",
     날짜: "7/12 (일)",
-    시간: "별도 안내",
-    형식: "오프라인 (서울 강남)",
+    시간: "14:00–18:00",
+    형식: "오프라인 (삼성)",
     highlight: true,
   },
   { 주차: "🎯 W4", 날짜: "7/19 (일)", 시간: "19:00–23:00", 형식: "온라인" },
@@ -224,7 +223,7 @@ export const SUBJECTIVE_FIELDS: { key: keyof Answers; label: string }[] = [
   { key: "막힌부분", label: "Q12. AI를 쓰며 막혔던 부분" },
   { key: "포기할것", label: "Q14. 포기/미뤄야 할 것 한 가지" },
   { key: "불참사유", label: "Q16. 불참 일정의 사유" },
-  { key: "부조장이유", label: "Q20. 부조장 역할에 끌린 이유" },
+  { key: "부조장이유", label: "Q20. 부조장에 지원하신 이유" },
   { key: "기억되고싶은모습", label: "Q21. 기억되고 싶은 사람" },
   { key: "집중영역", label: "Q22. 시간·비용을 쓰고 싶은 영역" },
   { key: "다짐", label: "Q23. 다짐과 얻고자 하는 바" },

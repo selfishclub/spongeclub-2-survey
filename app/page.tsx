@@ -245,7 +245,7 @@ export default function SurveyPage() {
               바탕으로, 스폰지클럽에서 6주를 함께 만들어가요.
             </p>
             <p className="font-medium">
-              천천히 답해주세요. ⏱ 소요 시간: 약 10~15분
+              천천히 답해주세요. ⏱ 소요 시간: 약 20분
             </p>
           </div>
         </header>
@@ -272,16 +272,13 @@ export default function SurveyPage() {
 
               <Field
                 id="닉네임"
-                label="Q2. 닉네임"
-                hint="슬랙과 조 활동에서 사용하실 이름이에요."
-                required
-                error={err("닉네임")}
+                label="Q2. 닉네임 (선택)"
+                hint="슬랙과 조 활동에서 사용하실 이름이에요. 따로 없으시면 안 쓰셔도 괜찮아요."
               >
                 <TextInput
                   value={answers.닉네임}
                   onChange={(v) => set("닉네임", v)}
-                  placeholder="스폰지"
-                  error={err("닉네임")}
+                  placeholder="스폰지 (선택)"
                 />
               </Field>
 
@@ -341,10 +338,22 @@ export default function SurveyPage() {
               <Field
                 id="GitHub이메일"
                 label="Q6. GitHub 계정 이메일"
-                hint="셋업 데이와 W1 미니 세션부터 GitHub 계정이 필요합니다. 초대를 위해 아이디가 아닌 이메일 주소를 적어주세요. (없으시면 github.com에서 무료 가입 후 그 이메일을 적어주시면 됩니다.)"
+                hint="셋업 데이와 W1 미니 세션부터 GitHub 계정이 필요합니다. 초대를 위해 깃헙 아이디가 아닌, 깃헙을 가입하신 이메일을 적어주세요."
                 required
                 error={err("GitHub이메일")}
               >
+                <p className="mb-2 text-[13.5px] text-muted">
+                  계정이 없으시면{" "}
+                  <a
+                    href="https://github.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-ink underline decoration-pop decoration-2 underline-offset-4 hover:opacity-70"
+                  >
+                    github.com
+                  </a>
+                  에서 무료 가입 후 그 이메일을 적어주세요.
+                </p>
                 <TextInput
                   value={answers.GitHub이메일}
                   onChange={(v) => set("GitHub이메일", v)}
@@ -457,7 +466,7 @@ export default function SurveyPage() {
                         동의_이용약관: v,
                       }))
                     }
-                    label="스폰지클럽 멤버 약속과 이용약관을 모두 읽고 이해했으며, 함께 지킬 것에 동의합니다."
+                    label="이용약관을 모두 확인했으며, 스폰지클럽 멤버약속을 지킬 것에 동의합니다."
                     error={err("동의_멤버약속") || err("동의_이용약관")}
                   />
                 </div>
@@ -475,13 +484,13 @@ export default function SurveyPage() {
                 </h3>
                 <p className="mt-1.5 text-[14.5px] leading-relaxed text-neutral-300">
                   스폰지클럽 활동 중 촬영되는 사진·영상, 그리고 슬랙·조 채널에
-                  쌓이는 공유 기록은 스폰지클럽의 활동을 알리고 다음 기수를
-                  만드는 콘텐츠·기록물로 활용되거나 SNS 등에 올라갈 수 있어요.
+                  쌓이는 공유 기록은 스폰지클럽의 활동을 이기적으로 알리는
+                  콘텐츠로 활용되거나 SNS 등에 올라갈 수 있어요.
                 </p>
                 <p className="mt-2 text-[14.5px] leading-relaxed text-neutral-300">
-                  혹시 본인의 사진이나 특정 콘텐츠가 활용되는 것을 원치
-                  않으신다면, <strong>사전에 미리 운영진에게 말씀해 주세요.</strong>{" "}
-                  말씀 주신 부분은 빠르게 확인해서 반영해 드립니다.
+                  원치 않으시면 <strong>사전에 미리, 또는 이후에라도 다니에게
+                  말씀 주셔도 괜찮습니다.</strong> 말씀 주신 부분은 빠르게 확인해서
+                  반영해 드립니다.
                 </p>
                 <div className="mt-3">
                   <ConsentCheck
@@ -663,15 +672,16 @@ export default function SurveyPage() {
               <Box variant="yellow">
                 <p className="font-bold">🛠 셋업 데이 안내 — 전원 참석</p>
                 <p className="mt-1.5 leading-relaxed">
-                  <strong>일시: 6월 27일(토) 저녁 8시 ~ 10시 (20:00–22:00)</strong>
+                  <strong>일시: 6월 27일(토) 저녁 8시 ~ 11시 (20:00–23:00)</strong>
                   <br />
                   <strong>방식: 온라인 진행</strong>
                 </p>
                 <p className="mt-2 leading-relaxed">
                   본격 시작 전, 함께 모여 GitHub와 Claude Code 환경을 직접
-                  세팅하고 과제 제출 방법까지 익히는 시간입니다. 강의가 아니라
-                  같이 손으로 세팅하는 자리예요. 이후 모든 주차가 매끄럽게
-                  굴러가려면 꼭 필요한 시간이라, 전원 참석으로 진행합니다.
+                  세팅하고 과제 제출 방법까지 익히는 시간입니다. 서로 가볍게
+                  자기소개도 나눠요. 강의가 아니라 같이 손으로 세팅하는
+                  자리예요. 이후 모든 주차가 매끄럽게 굴러가려면 꼭 필요한
+                  시간이라, 전원 참석으로 진행합니다.
                 </p>
               </Box>
             </div>
@@ -718,7 +728,7 @@ export default function SurveyPage() {
                 error={err("불참일정")}
               >
                 <CheckboxGroup
-                  options={[...ABSENCE_OPTIONS, ABSENCE_ALL_OK]}
+                  options={[ABSENCE_ALL_OK, ...ABSENCE_OPTIONS]}
                   values={answers.불참일정}
                   onToggle={toggleAbsence}
                   error={err("불참일정")}
@@ -740,13 +750,13 @@ export default function SurveyPage() {
             {/* W3 오프라인 안내 */}
             <div className="mt-7">
               <Box variant="yellow">
-                <p className="font-bold">
-                  🏕 W3 오프라인 모임 — 7/12(일), 서울 강남
-                </p>
+                <p className="font-bold">🏕 W3 오프라인 모임 — 7/12(일), 삼성</p>
                 <p className="mt-1.5 leading-relaxed">
+                  <strong>장소: 삼성 / 시간: 오후 2시 ~ 6시 (14:00–18:00)</strong>
+                  <br />
                   6주 중 유일한 대면 모임이며, 이번 기수는 전체 크루가 다 함께
-                  모입니다. 장소·시간 등 상세는 확정되는 대로 별도 공지드립니다.
-                  (※ 운영 상황에 따라 변동될 수 있어요.)
+                  모입니다. (※ 세부 장소 등은 확정되는 대로 별도 공지드리며,
+                  운영 상황에 따라 변동될 수 있어요.)
                 </p>
               </Box>
             </div>
@@ -819,7 +829,7 @@ export default function SurveyPage() {
                   error={err("부조장지원")}
                 />
               </Field>
-              <Field id="부조장이유" label="Q20. 부조장 역할에 끌린 이유">
+              <Field id="부조장이유" label="Q20. 부조장에 지원하신 이유">
                 <TextInput
                   value={answers.부조장이유}
                   onChange={(v) => set("부조장이유", v)}
