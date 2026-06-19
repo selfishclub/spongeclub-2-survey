@@ -1,12 +1,14 @@
-// ── 설문/어드민 공용 UI 컴포넌트 (다크 테마 · 디자인 토큰) ──
+// ── 설문 공용 UI 컴포넌트 ──
+// 페이지 배경은 다크(검정), 섹션 카드는 화이트(어두운 글씨)인 하이브리드.
+// 이 컴포넌트들은 모두 흰색 SectionCard 내부에서 쓰이므로 라이트(dark-on-white) 스타일.
 import type { ReactNode } from "react";
 
-/* 상단 고정 진행률 바 */
+/* 상단 고정 진행률 바 (검정 페이지 위) */
 export function ProgressBar({ value }: { value: number }) {
   const pct = Math.max(0, Math.min(100, Math.round(value)));
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      <div className="h-1.5 w-full bg-line">
+      <div className="h-1.5 w-full bg-white/15">
         <div
           className="progress-fill h-full bg-pop"
           style={{ width: `${pct}%` }}
@@ -21,7 +23,7 @@ export function ProgressBar({ value }: { value: number }) {
   );
 }
 
-/* 섹션 상단 "SECTION N" 회색 대문자 소형 라벨 + 이모지 제목 */
+/* 섹션 상단 "SECTION N" 회색 대문자 소형 라벨 + 이모지 제목 (흰 카드 내부) */
 export function SectionLabel({
   n,
   emoji,
@@ -33,10 +35,10 @@ export function SectionLabel({
 }) {
   return (
     <div className="mb-5">
-      <div className="text-[12px] font-bold uppercase tracking-[0.18em] text-muted">
+      <div className="text-[12px] font-bold uppercase tracking-[0.18em] text-neutral-400">
         SECTION {n}
       </div>
-      <h2 className="mt-1.5 text-2xl font-extrabold leading-snug">
+      <h2 className="mt-1.5 text-2xl font-extrabold leading-snug text-neutral-900">
         <span className="mr-1.5">{emoji}</span>
         {title}
       </h2>
@@ -44,10 +46,10 @@ export function SectionLabel({
   );
 }
 
-/* 섹션 카드 래퍼 */
+/* 섹션 카드 래퍼 — 흰 배경 */
 export function SectionCard({ children }: { children: ReactNode }) {
   return (
-    <section className="rounded-card border border-line bg-surface p-6 shadow-[0_1px_2px_rgba(0,0,0,0.3)] sm:p-8">
+    <section className="rounded-card border border-neutral-200 bg-white p-6 text-neutral-900 shadow-[0_4px_20px_rgba(0,0,0,0.35)] sm:p-8">
       {children}
     </section>
   );
@@ -62,9 +64,9 @@ export function Box({
   children: ReactNode;
 }) {
   const styles: Record<string, string> = {
-    plain: "border-line bg-white/5",
-    yellow: "border-pop bg-pop/15",
-    warn: "border-pop bg-pop/20",
+    plain: "border-neutral-200 bg-neutral-50",
+    yellow: "border-pop bg-pop/20",
+    warn: "border-pop bg-pop/30",
   };
   return (
     <div
@@ -91,21 +93,23 @@ export function FieldLabel({
     <div className="mb-2">
       <label
         className={`block text-[16px] font-bold leading-snug ${
-          error ? "text-red-400" : ""
+          error ? "text-red-600" : "text-neutral-900"
         }`}
       >
         {label}
-        {required && <span className="ml-1 text-red-400">*</span>}
+        {required && <span className="ml-1 text-red-500">*</span>}
       </label>
       {hint && (
-        <p className="mt-1 text-[13.5px] leading-relaxed text-muted">{hint}</p>
+        <p className="mt-1 text-[13.5px] leading-relaxed text-neutral-500">
+          {hint}
+        </p>
       )}
     </div>
   );
 }
 
 const inputBase =
-  "w-full rounded-xl border bg-surface px-4 py-3 text-[15.5px] outline-none transition placeholder:text-neutral-500 focus:border-ink focus:ring-2 focus:ring-pop/60";
+  "w-full rounded-xl border bg-white px-4 py-3 text-[15.5px] text-neutral-900 outline-none transition placeholder:text-neutral-400 focus:border-neutral-900 focus:ring-2 focus:ring-pop/60";
 
 /* 단문 입력 */
 export function TextInput({
@@ -130,7 +134,7 @@ export function TextInput({
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
-      className={`${inputBase} ${error ? "border-red-500" : "border-line"}`}
+      className={`${inputBase} ${error ? "border-red-400" : "border-neutral-300"}`}
     />
   );
 }
@@ -156,7 +160,7 @@ export function TextArea({
       placeholder={placeholder}
       rows={rows}
       className={`${inputBase} resize-y leading-relaxed ${
-        error ? "border-red-500" : "border-line"
+        error ? "border-red-400" : "border-neutral-300"
       }`}
     />
   );
@@ -185,18 +189,20 @@ export function RadioGroup({
             onClick={() => onChange(opt)}
             className={`flex items-center gap-3 rounded-xl border-2 px-4 py-3 text-left text-[15.5px] transition ${
               selected
-                ? "border-pop bg-pop/15 font-semibold"
+                ? "border-neutral-900 bg-pop/30 font-semibold"
                 : error
-                ? "border-red-500/60 bg-surface hover:border-neutral-500"
-                : "border-line bg-surface hover:border-neutral-500"
+                ? "border-red-300 bg-white hover:border-neutral-400"
+                : "border-neutral-200 bg-white hover:border-neutral-400"
             }`}
           >
             <span
               className={`flex h-5 w-5 flex-none items-center justify-center rounded-full border-2 ${
-                selected ? "border-pop" : "border-neutral-600"
+                selected ? "border-neutral-900" : "border-neutral-300"
               }`}
             >
-              {selected && <span className="h-2.5 w-2.5 rounded-full bg-pop" />}
+              {selected && (
+                <span className="h-2.5 w-2.5 rounded-full bg-neutral-900" />
+              )}
             </span>
             <span>{opt}</span>
           </button>
@@ -229,17 +235,17 @@ export function CheckboxGroup({
             onClick={() => onToggle(opt)}
             className={`flex items-center gap-3 rounded-xl border-2 px-4 py-3 text-left text-[15.5px] transition ${
               selected
-                ? "border-pop bg-pop/15 font-semibold"
+                ? "border-neutral-900 bg-pop/30 font-semibold"
                 : error
-                ? "border-red-500/60 bg-surface hover:border-neutral-500"
-                : "border-line bg-surface hover:border-neutral-500"
+                ? "border-red-300 bg-white hover:border-neutral-400"
+                : "border-neutral-200 bg-white hover:border-neutral-400"
             }`}
           >
             <span
               className={`flex h-5 w-5 flex-none items-center justify-center rounded-md border-2 ${
                 selected
-                  ? "border-pop bg-pop text-black"
-                  : "border-neutral-600"
+                  ? "border-neutral-900 bg-neutral-900 text-white"
+                  : "border-neutral-300"
               }`}
             >
               {selected && <span className="text-[12px] leading-none">✓</span>}
@@ -270,15 +276,17 @@ export function ConsentCheck({
       onClick={() => onChange(!checked)}
       className={`flex w-full items-center gap-3 rounded-xl border-2 px-4 py-3.5 text-left text-[15px] font-semibold transition ${
         checked
-          ? "border-pop bg-pop/15"
+          ? "border-neutral-900 bg-pop/30"
           : error
-          ? "border-red-500 bg-red-950/40"
-          : "border-line bg-surface hover:border-neutral-500"
+          ? "border-red-400 bg-red-50"
+          : "border-neutral-200 bg-white hover:border-neutral-400"
       }`}
     >
       <span
         className={`flex h-6 w-6 flex-none items-center justify-center rounded-md border-2 ${
-          checked ? "border-pop bg-pop text-black" : "border-neutral-600"
+          checked
+            ? "border-neutral-900 bg-neutral-900 text-white"
+            : "border-neutral-300"
         }`}
       >
         {checked && <span className="text-[14px] leading-none">✓</span>}

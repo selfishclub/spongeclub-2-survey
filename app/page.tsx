@@ -71,7 +71,7 @@ function NotionLink({ href, label }: { href: string; label: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1 text-[14px] font-semibold text-ink underline decoration-pop decoration-2 underline-offset-4 hover:opacity-70"
+      className="inline-flex items-center gap-1 text-[14px] font-semibold text-neutral-900 underline decoration-pop decoration-2 underline-offset-4 hover:opacity-70"
     >
       👉 {label}
     </a>
@@ -245,7 +245,7 @@ export default function SurveyPage() {
               바탕으로, 스폰지클럽에서 6주를 함께 만들어가요.
             </p>
             <p className="font-medium">
-              천천히 답해주세요. ⏱ 소요 시간: 약 20분
+              꼼꼼하게 확인 후 작성해주세요. ⏱ 소요 시간: 약 20분
             </p>
           </div>
         </header>
@@ -348,7 +348,7 @@ export default function SurveyPage() {
                     href="https://github.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-ink underline decoration-pop decoration-2 underline-offset-4 hover:opacity-70"
+                    className="font-semibold text-neutral-900 underline decoration-pop decoration-2 underline-offset-4 hover:opacity-70"
                   >
                     github.com
                   </a>
@@ -412,7 +412,7 @@ export default function SurveyPage() {
               emoji="✅"
               title="함께하기 전에 — 멤버의 약속 · 이용약관 · 콘텐츠 안내"
             />
-            <p className="mb-6 text-[15px] leading-relaxed text-neutral-300">
+            <p className="mb-6 text-[15px] leading-relaxed text-neutral-700">
               스폰지클럽은 운영진이 &lsquo;제공&rsquo;하는 강의가 아니라, 크루
               모두가 함께 굴리는 커뮤니티예요. 그래서 시작 전에 꼭 확인하고 가야
               할 세 가지를 안내드립니다. 가볍게 넘기지 마시고, 천천히 읽어보신 후
@@ -434,7 +434,7 @@ export default function SurveyPage() {
                 </h3>
 
                 <p className="mt-3 text-[14.5px] font-semibold">멤버의 약속</p>
-                <p className="mt-1 text-[14.5px] leading-relaxed text-neutral-300">
+                <p className="mt-1 text-[14.5px] leading-relaxed text-neutral-700">
                   이기적공유에 진심으로 참여하기, 조의 리듬을 함께 만들기, 서로의
                   시도를 존중하기 — 우리가 6주를 잘 보내기 위한 약속이에요.
                 </p>
@@ -446,7 +446,7 @@ export default function SurveyPage() {
                 </div>
 
                 <p className="mt-4 text-[14.5px] font-semibold">이용약관</p>
-                <p className="mt-1 text-[14.5px] leading-relaxed text-neutral-300">
+                <p className="mt-1 text-[14.5px] leading-relaxed text-neutral-700">
                   참여·운영·환불 등에 대한 기본 약관이에요.
                 </p>
                 <div className="mt-2">
@@ -482,15 +482,14 @@ export default function SurveyPage() {
                 <h3 className="text-[16px] font-bold">
                   2-2. 콘텐츠 활용 안내 📸
                 </h3>
-                <p className="mt-1.5 text-[14.5px] leading-relaxed text-neutral-300">
+                <p className="mt-1.5 text-[14.5px] leading-relaxed text-neutral-700">
                   스폰지클럽 활동 중 촬영되는 사진·영상, 그리고 슬랙·조 채널에
                   쌓이는 공유 기록은 스폰지클럽의 활동을 이기적으로 알리는
                   콘텐츠로 활용되거나 SNS 등에 올라갈 수 있어요.
                 </p>
-                <p className="mt-2 text-[14.5px] leading-relaxed text-neutral-300">
-                  원치 않으시면 <strong>사전에 미리, 또는 이후에라도 다니에게
-                  말씀 주셔도 괜찮습니다.</strong> 말씀 주신 부분은 빠르게 확인해서
-                  반영해 드립니다.
+                <p className="mt-2 text-[14.5px] leading-relaxed text-neutral-700">
+                  원치 않으시면 <strong>사전에 미리, 또는 이후에라도 운영진
+                  다니에게 말씀해주셔도 괜찮습니다.</strong>
                 </p>
                 <div className="mt-3">
                   <ConsentCheck
@@ -507,7 +506,7 @@ export default function SurveyPage() {
           {/* ── SECTION 3 — AI 도구 사용 경험 ── */}
           <SectionCard>
             <SectionLabel n={3} emoji="🤖" title="AI 도구 사용 경험" />
-            <p className="mb-6 text-[15px] leading-relaxed text-neutral-300">
+            <p className="mb-6 text-[15px] leading-relaxed text-neutral-700">
               조 배정과 W1 사전 안내에 활용하기 위해, 본인의 AI 사용 경험을
               솔직하게 적어주세요. 정답이 있는 질문이 아니에요. 잘 못 써도 괜찮고,
               많이 안 써도 괜찮아요.
@@ -574,15 +573,15 @@ export default function SurveyPage() {
           {/* ── SECTION 4 — 참여 조건과 시간 확보 ── */}
           <SectionCard>
             <SectionLabel n={4} emoji="⏳" title="참여 조건과 시간 확보" />
-            <p className="mb-5 text-[15px] leading-relaxed text-neutral-300">
+            <p className="mb-5 text-[15px] leading-relaxed text-neutral-700">
               스폰지클럽 2기를 제대로 굴리려면, 라이브 세션 외에도 본인 시간이
               필요합니다.
             </p>
 
             {/* 시간 구조 표 */}
-            <div className="mb-6 overflow-hidden rounded-xl border border-line">
+            <div className="mb-6 overflow-hidden rounded-xl border border-neutral-200">
               <table className="w-full text-left text-[13.5px]">
-                <thead className="bg-white/5 text-[12px] uppercase tracking-wide text-muted">
+                <thead className="bg-neutral-50 text-[12px] uppercase tracking-wide text-muted">
                   <tr>
                     <th className="px-3 py-2 font-semibold">구분</th>
                     <th className="px-3 py-2 font-semibold">시간</th>
@@ -591,18 +590,18 @@ export default function SurveyPage() {
                 </thead>
                 <tbody>
                   {TIME_TABLE.map((r) => (
-                    <tr key={r.구분} className="border-t border-line align-top">
+                    <tr key={r.구분} className="border-t border-neutral-200 align-top">
                       <td className="px-3 py-2.5 font-bold whitespace-nowrap">
                         {r.구분}
                       </td>
                       <td className="px-3 py-2.5 whitespace-nowrap">{r.시간}</td>
-                      <td className="px-3 py-2.5 text-neutral-300">{r.내용}</td>
+                      <td className="px-3 py-2.5 text-neutral-700">{r.내용}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p className="mb-6 text-[14.5px] leading-relaxed text-neutral-300">
+            <p className="mb-6 text-[14.5px] leading-relaxed text-neutral-700">
               이 시간들은 6주 동안 전체적으로 확보되어야 합니다. 특정 한 주에
               몰아서가 아니라, 매주 본인의 리듬 안에서 꾸준히 굴러갈 수 있게요.
             </p>
@@ -662,7 +661,7 @@ export default function SurveyPage() {
             <div className="space-y-4">
               <Box variant="plain">
                 <p className="font-bold">📹 카메라 사용 안내</p>
-                <p className="mt-1.5 leading-relaxed text-neutral-300">
+                <p className="mt-1.5 leading-relaxed text-neutral-700">
                   라이브 세션과 조 모임에서는 가급적 카메라를 켜고 참여해 주세요.
                   얼굴을 보고 이야기할 때 조의 리듬과 이기적공유의 밀도가 훨씬
                   좋아집니다.
@@ -687,9 +686,9 @@ export default function SurveyPage() {
             </div>
 
             {/* 6주 일정 표 */}
-            <div className="mt-6 overflow-hidden rounded-xl border border-line">
+            <div className="mt-6 overflow-hidden rounded-xl border border-neutral-200">
               <table className="w-full text-left text-[13.5px]">
-                <thead className="bg-white/5 text-[12px] uppercase tracking-wide text-muted">
+                <thead className="bg-neutral-50 text-[12px] uppercase tracking-wide text-muted">
                   <tr>
                     <th className="px-3 py-2 font-semibold">주차</th>
                     <th className="px-3 py-2 font-semibold">날짜</th>
@@ -701,7 +700,7 @@ export default function SurveyPage() {
                   {SCHEDULE_TABLE.map((r) => (
                     <tr
                       key={r.주차}
-                      className={`border-t border-line align-top ${
+                      className={`border-t border-neutral-200 align-top ${
                         r.highlight ? "bg-pop/15" : ""
                       }`}
                     >
@@ -710,7 +709,7 @@ export default function SurveyPage() {
                       </td>
                       <td className="px-3 py-2.5 whitespace-nowrap">{r.날짜}</td>
                       <td className="px-3 py-2.5 whitespace-nowrap">{r.시간}</td>
-                      <td className="px-3 py-2.5 text-neutral-300">{r.형식}</td>
+                      <td className="px-3 py-2.5 text-neutral-700">{r.형식}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -798,7 +797,7 @@ export default function SurveyPage() {
               emoji="🙌"
               title="부조장 지원 — 더 깊이 가져가고 싶다면"
             />
-            <div className="space-y-3 text-[15px] leading-relaxed text-neutral-300">
+            <div className="space-y-3 text-[15px] leading-relaxed text-neutral-700">
               <p>
                 스폰지클럽 2기는 총 6개 조 × 조당 12명 정도로 운영됩니다. 각
                 조에는 조장과 함께, 조원들을 적극적으로 챙기고 활동하는 부조장이
@@ -807,12 +806,9 @@ export default function SurveyPage() {
               <p>
                 부조장은 누군가를 가르치는 자리가 아닙니다. 조장과 함께{" "}
                 <strong>조원들을 적극적으로 챙기고, 본인의 인사이트를 가장 먼저
-                나누며 공유해 주는 역할</strong>이에요. (조에 가장 먼저 발견을
-                꺼내는 사람 / 조원들의 작업에 가장 먼저 반응하는 사람 / 조의
-                리듬을 함께 만드는 사람.){" "}
-                <strong>&lsquo;이기적공유&rsquo;</strong>에 가장 먼저 마음을 여는
-                사람이고, 적극적으로 챙기고 공유할수록 본인에게도 더 큰 장점이
-                되는 자리예요.
+                나누며 공유해 주는 역할</strong>이에요. 특히{" "}
+                <strong>&lsquo;이기적공유&rsquo;</strong> — 적극적으로 챙기고
+                공유할수록 본인에게도 더 큰 장점이 되는 자리예요.
               </p>
             </div>
             <div className="mt-6 space-y-7">
@@ -842,14 +838,14 @@ export default function SurveyPage() {
           {/* ── SECTION 7 — 마지막 ── */}
           <SectionCard>
             <SectionLabel n={7} emoji="✍️" title="마지막 — 본인의 언어로" />
-            <p className="mb-5 text-[15px] leading-relaxed text-neutral-300">
+            <p className="mb-5 text-[15px] leading-relaxed text-neutral-700">
               세 문항이 남았습니다. 본인의 언어로 적어주세요.
             </p>
 
             <div className="mb-6">
               <Box variant="plain">
                 <p className="font-bold">💰 비용 안내</p>
-                <p className="mt-1.5 leading-relaxed text-neutral-300">
+                <p className="mt-1.5 leading-relaxed text-neutral-700">
                   6주 동안은 기본적으로 Claude를 사용하며, 필요에 따라 추가 API나
                   다른 툴이 더해질 수 있습니다. Claude 유료 계정 기준 사용 깊이에
                   따라 <strong>월 $100 ~ $200 수준</strong>의 비용이 발생할 수
